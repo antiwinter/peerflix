@@ -26,7 +26,7 @@ var argv = rc(
     .usage('Usage: $0 magnet-link-or-torrent [options]')
     .alias('c', 'connections')
     .describe('c', 'max connected peers')
-    .default('c', os.cpus().length > 1 ? 100 : 30)
+    .default('c', os.cpus() && os.cpus().length > 1 ? 100 : 30)
     .alias('p', 'port')
     .describe('p', 'change the http port')
     .default('p', 8888)
